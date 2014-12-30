@@ -1,45 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pangr</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pangr" %>">
+
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%# Modernizr is required for Zurb Foundation %>
+  <%= javascript_include_tag 'vendor/modernizr' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  
-  <nav class="top-bar">
+  <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
         <h1><a href="/">Pangr</a></h1>
       </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
 
     <section class="top-bar-section">
+      <!-- Right Nav Section -->
       <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
+        <% if user_signed_in? %>
+        <li>Logged in as <%= current_user.email %></li>
+        <li><%= link_to "Add a Group", new_group_path %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path  %></li>
+        <li><%= link_to "Login", new_user_session_path  %></li>
+        <% end %>
       </ul>
     </section>
   </nav>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
+
+  <div class="row">
+    <div class="columns small-12">
+      <%= render 'layouts/flash' %>
+
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
     </div>
-  <%- end -%>
-
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_tag do %>
-    $(function(){
-      $(document).foundation();
-    });
-  <% end %>
-  <%= yield :extra_footer %>
+  </div>
 </body>
 </html>

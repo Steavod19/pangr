@@ -1,0 +1,9 @@
+<div>
+<h3><%= @group.title %></h3>
+<p><%= @group.description %></p>
+</div>
+
+<% if signed_in? %>
+<%= link_to "Edit", edit_group_path %>
+<%= link_to "Delete", group_path(@group), method: :delete %>
+<% end %>
