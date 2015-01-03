@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pangr" %>">
 
-  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Pangr" %></title>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%# Modernizr is required for Zurb Foundation %>
@@ -30,7 +30,6 @@
         <% if user_signed_in? %>
         <li>Logged in as <%= current_user.sname %></li>
         <li><%= link_to "Create a Group", new_group_path %></li>
-        <li><%= link_to "My Groups", groups_path %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
         <% else %>
@@ -41,9 +40,9 @@
     </section>
   </nav>
 
-
   <div class="row">
-    <div class="columns small-12">
+    <div class="columns medium-12">
+
       <%= render 'layouts/flash' %>
 
       <%= yield %>

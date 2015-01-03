@@ -1,10 +1,14 @@
+<div class="columns medium-6 small-12 small-centered edit-new-form text-center">
+
 <h1>Edit Group</h1>
 <%= form_for @group do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
-<%= f.label :description %>
-<%= f.text_area :description %>
-
+<div class="textarea">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
 
 <%= f.submit 'Update Group' %>
 <% end %>
+</div>
