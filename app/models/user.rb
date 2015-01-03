@@ -5,4 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :groups
   has_many :posts
+
+  validates :sname,
+  presence: true,
+  uniqueness: true,
+  length: { maximum: 50 }
+
+  validates :email,
+  uniqueness: true
+
+
 end

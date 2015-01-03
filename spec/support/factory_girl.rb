@@ -7,4 +7,9 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :group do
+    title "Whatever title"
+    description "Whatever description lalalala"
+    user
+  end
 end
