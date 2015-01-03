@@ -7,17 +7,17 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    @group = current_user.groups.build
   end
 
   def create
-    @group = Group.new(group_params)
+    @group = current_user.groups.build(group_params)
 
     if @group.save
       flash[:notice] = "You've successfully created a group!"
       redirect_to @group
     else
-      flash[:alert] = "Fail"
+      flash[:alert] = "You've failed to created a group!"
       render "new"
     end
   end
@@ -35,9 +35,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = current_user.groups.find(params[:id])
   end
 
   def destroy
+    @group = current_user.groups.find(params[:id])
     @group.destroy
     flash[:notice] = "You've successfully deleted a group!"
     redirect_to root_path

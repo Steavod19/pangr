@@ -1,6 +1,8 @@
 <div>
 <h3><%= @group.title %></h3>
-<p><%= @group.description %></p>
+<p>Description: <%= @group.description %></p>
+<p>Created by: <%= @group.user.email %></p>
+
 </div>
 
 <% if signed_in? %>
