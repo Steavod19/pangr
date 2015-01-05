@@ -6,10 +6,4 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
   end
-
-  factory :group do
-    title "Whatever title"
-    description "Whatever description lalalala"
-    user
-  end
 end

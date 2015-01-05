@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   has_many :groups
   has_many :posts
 
-  validates :sname,
-  presence: true,
-  uniqueness: true,
-  length: { maximum: 50 }
+  # validates :sname,
+  # presence: true,
+  # uniqueness: true,
+  # length: { maximum: 50 }
 
   validates :email,
   uniqueness: true
