@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class PostsController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
 
 
   private
-  def review_params
+  def post_params
     params.require(:post).permit(:body)
   end
 

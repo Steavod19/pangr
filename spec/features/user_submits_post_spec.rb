@@ -27,7 +27,7 @@ feature "User Submits a new post", %q(
 
       visit group_path(group)
 
-      fill_in "body", with: "This is my comment on the subject"
+      fill_in "Post:", with: "This is my comment on the subject"
       click_button "Post"
       expect(page).to have_content("You've successfully submitted a post!")
       expect(page).to have_content("This is my comment on the subject")

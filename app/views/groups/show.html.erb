@@ -9,10 +9,6 @@
     <p>Created by: <%= @group.user.sname %></p>
   </div>
 
-
-
-
-
   <% if signed_in? %>
     <div>
       <ul class="button-group">
@@ -31,7 +27,31 @@
     <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.submit 'post'%>
+    <%= f.submit 'Post'%>
   </p>
+  <% end %>
+<% end %>
+
+
+
+<div>
+  <h6>Latest posts:</h6>
+</div>
+<% if signed_in? %>
+  <% @group.posts.each do |post| %>
+    <% @user = User.all %>
+    <p><%= @user.find(post.user_id).sname %>: <%= post.body %></p>
+    <% if current_user.id == post.user_id %>
+      <%= link_to "Edit Post", edit_group_post_path(@group, post) %>
+      <%= link_to "Delete Post", group_post_path(@group, post), method: :delete %>
+    <% end %>
+  <% end %>
+<% elsif %>
+    <% @group.posts.each do |post| %>
+    <p>
+      <% @user = User.all %>
+      <%= @user.find(post.user_id).sname %>: <%= post.body %>
+    </p>
+
   <% end %>
 <% end %>

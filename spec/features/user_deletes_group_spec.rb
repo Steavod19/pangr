@@ -29,7 +29,7 @@
       fill_in "Description", with: "lots of cars and junk"
 
       click_button "Create Group"
-      click_button "Delete"
+      click_link "Delete"
       expect(page).to have_content("You've successfully deleted a group!")
     end
   end
