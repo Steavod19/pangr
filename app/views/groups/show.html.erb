@@ -22,3 +22,16 @@
     </div>
   <% end %>
 </div>
+
+
+<% if signed_in? %>
+  <%= form_for([@group, @group.posts.build]) do |f| %>
+  <p>
+    <%= f.label :body, "Post:" %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'post'%>
+  </p>
+  <% end %>
+<% end %>

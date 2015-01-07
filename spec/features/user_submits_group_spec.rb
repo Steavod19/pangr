@@ -1,16 +1,16 @@
 require "rails_helper"
 
 feature "User Submits a new group", %q(
-As an authenticated user
-I want to submit a group
-So that I can invite other users to that group
+  As an authenticated user
+  I want to submit a group
+  So that I can invite other users to that group
 
-Acceptance Criteria
-[ ] Go to groups/new to fill out form
-[ ] User must enter title
-[ ] User must enter description
+  Acceptance Criteria
+  [ ] Go to groups/new to fill out form
+  [ ] User must enter title
+  [ ] User must enter description
 
-) do
+  ) do
 
   context "authenticated user" do
     let(:user){ FactoryGirl.create(:user) }

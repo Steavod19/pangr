@@ -35,12 +35,18 @@ h2 {
 // NAV BAR
 // ==========================
 
-
+  .right li a {
+    padding: 5px;
+    }
   .name h1 a {
     font-family: 'Muli';
     letter-spacing: 2px;
   }
 
+  .logo {
+    margin-top: 5px;
+    margin-right: -20px;
+  }
 
 
 // ==========================
@@ -81,7 +87,7 @@ input:-moz-placeholder { color:#777; }
     font-size: 14px;
   }
   a {
-    color: #259073;
+    color: #0B0E31;
     text-align: center;
     font-size: 14px;
   }

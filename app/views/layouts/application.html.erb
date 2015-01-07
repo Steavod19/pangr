@@ -12,11 +12,14 @@
   <%= javascript_include_tag 'vendor/modernizr' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
-
 <body>
   <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
+    <ul class="title-area inline-list">
+      <li class="logo">
+        <h1><%= image_tag("pangr400.png", size: "75x75", :alt => "logo") %></h1>
+      </li>
       <li class="name">
         <h1><a href="/">Pangr</a></h1>
       </li>
@@ -24,11 +27,11 @@
       <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
 
-    <section class="top-bar-section">
+    <section class="top-bar-section menu-items">
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
-        <li>Logged in as <%= current_user.sname %></li>
+        <li><a href=""><%= current_user.sname %></li>
         <li><%= link_to "Create a Group", new_group_path %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>

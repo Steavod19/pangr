@@ -6,4 +6,9 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
   end
+  factory :group do
+    title "Car Talk"
+    description "this is the description of the group"
+    user
+  end
 end
