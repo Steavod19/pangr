@@ -1,5 +1,22 @@
-<div class="index-format">
-  <% @groups.each do |group| %>
-    <h3><%= link_to group.title, group %></h3>
-  <% end %>
+
+<div class="container">
+
+  <div class="header_image banner">
+    <%= image_tag("pangr_banner.jpg", alt: "banner") %>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <h3 class="banner_text">New Groups</h3>
+      <% @groups.each do |group| %>
+      <h5><%= link_to group.title, group, class: "banner_text" %></h5>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+
+
 </div>

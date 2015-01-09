@@ -43,14 +43,11 @@
     </section>
   </nav>
 
-  <div class="row">
-    <div class="columns medium-12">
-
+  <div class="row wrapper">
       <%= render 'layouts/flash' %>
 
       <%= yield %>
       <%= javascript_include_tag "application" %>
-    </div>
   </div>
 </body>
 </html>
