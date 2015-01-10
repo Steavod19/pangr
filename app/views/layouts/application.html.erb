@@ -6,13 +6,15 @@
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Pangr" %>">
   <title><%= content_for?(:title) ? yield(:title) : "Pangr" %></title>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%# Modernizr is required for Zurb Foundation %>
-  <%= javascript_include_tag 'vendor/modernizr' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag "application",
+  'http://fonts.googleapis.com/css?family=Muli:400,400italic' media: "all" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
-  <link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
+
+
+  <link href= rel='stylesheet' type='text/css'>
 
 </head>
 <body>

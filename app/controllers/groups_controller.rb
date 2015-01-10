@@ -24,6 +24,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @post_order = @group.posts.find( :all, :order => "id DESC" )
   end
 
   def update
