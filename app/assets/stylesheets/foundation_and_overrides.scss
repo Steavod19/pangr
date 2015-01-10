@@ -140,7 +140,7 @@ $success-color: #259073;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 5px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -1378,8 +1378,8 @@ $topbar-title-font-size: rem-calc(35);
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: #060821;
 // $topbar-dropdown-link-color: $white;
-// $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $oil;
+$topbar-dropdown-link-bg: #060821;
+$topbar-dropdown-link-bg-hover: #0B0E31;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1394,10 +1394,10 @@ $topbar-dropdown-bg: #060821;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-color-hover: #041122;
+$topbar-link-bg-color-hover: #041122;
 $topbar-link-bg-hover: #0B0E31;
 // $topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active-hover: scale-color(#060821, $lightness: -14%);
+// $topbar-link-bg-active-hover: scale-color(#060821, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
@@ -1407,11 +1407,11 @@ $topbar-link-bg-active-hover: scale-color(#060821, $lightness: -14%);
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;
 
-// $topbar-dropdown-label-color: $monsoon;
+$topbar-dropdown-label-color: white;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: $oil;
+$topbar-dropdown-label-bg: #060821;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;

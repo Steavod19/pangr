@@ -2,15 +2,19 @@
 
 <div class="row">
   <div class="medium-12 columns">
-    <div class="panel top-margin padding-left">
-      <h2><%= @group.title %></h2>
-      <p>Description: <%= @group.description %></p>
-      <p>Created by: <%= @group.user.sname %></p>
+    <div class="panel post-color radius top-margin padding-left padding-top columns">
+      <div class="medium-8 columns">
+        <h2 class="white-text"><%= @group.title %></h2>
+        <p class="white-text">Description: <%= @group.description %></p>
+        <p class="white-text">Created by: <%= @group.user.sname %></p>
+      </div>
       <% if signed_in? %>
-        <ul class="row button-group">
+      <div class="medium-4 columns">
+        <ul class="button-group right margin-right">
           <li><%= link_to "Edit", edit_group_path(@group), class: "tiny button" %></li>
           <li><%= link_to "Delete", group_path(@group), method: :delete, class: "tiny button" %></li>
         </ul>
+      </div>
 
       <% end %>
     </div>
@@ -20,15 +24,13 @@
 
 <div class="row">
   <div class="medium-3 columns ">
-    <div class="panel">
+    <div class="panel radius post-color">
       <% if signed_in? %>
-      <a href="#"><%= image_tag current_user.profile_photo.medium, class: "show_profile_img" %></a>
-      <h3><a href="#"><%= current_user.sname %></a></h3>
-      <% end %>
-      <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-        <section class="section">
-          <h5 class="title"><a href="#">Popular Groups</a></h5>
-        </section>
+      <a href="#"><%= image_tag current_user.profile_photo.medium, class: "show_profile_img center" %></a>
+      <div class="top-margin">
+        <h3><a href="#"><%= current_user.sname %></a></h3>
+        <% end %>
+          <h5 class="title white-text">Popular Groups</h5>
       </div>
     </div>
   </div>
@@ -43,11 +45,13 @@
             <%= form_for([@group, @group.posts.build]) do |f| %>
             <%= f.label :body, "Post:" %>
             <%= f.text_area :body, size: "5x5" %>
-            <div class="carrier-wave-field">
+            <div class="carrier-wave-field medium-6 columns">
             <%= f.file_field :post_photo %>
             </div>
           </div>
-            <%= f.submit 'Post it', class: "small button right" %></p>
+          <div class="medium-6 columns">
+            <p><%= f.submit 'Post it', class: "small button right" %></p>
+          </div>
             <% end %>
           <% end %>
       </div>
@@ -63,8 +67,8 @@
       <% @group.posts.each do |post| %>
         <% unless post.user_id == nil %>
           <% @user = User.find(post.user_id) %>
-          <div class="panel row user_name">
-            <p><%= @user.sname %>:</p>
+          <div class="panel radius row user_name post-color">
+            <p class="post_show"><%= @user.sname %>:</p>
             <p><%= image_tag(post.post_photo) %></p>
             <p class="post_show"><%= post.body %></p>
           </div>
@@ -80,6 +84,7 @@
           </ul>
         </div>
         <hr/>
+
 
           <% end %>
         <% end %>
@@ -107,7 +112,7 @@
       </div>
       <div class="medium-6 columns">
         <ul class="inline-list center">
-          <li><a href="#">Home</a></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><a href="#">Create Group</a></li>
           <li><a href="#">Section 3</a></li>
           <li><a href="#">Section 4</a></li>

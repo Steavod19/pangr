@@ -30,11 +30,16 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
-        <li><a href=""><%= current_user.sname %>
-           <%= image_tag current_user.profile_photo.thumb, class: "profile tiny" %></li></a>
-        <li><%= link_to "Create a Group", new_group_path %></li>
-        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+        <li class="has-dropdown"><a href="#">
+          <%= current_user.sname %>
+           <%= image_tag current_user.profile_photo.thumb, class: "profile tiny" %>
+           </a>
+           <ul class="dropdown">
+             <li><%= link_to "Create a Group", new_group_path %></li>
+             <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+             <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+           </ul>
+         </li>
         <% else %>
         <li><%= link_to "Sign up", new_user_registration_path  %></li>
         <li><%= link_to "Login", new_user_session_path  %></li>
