@@ -3,9 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :groups
-  has_many :posts
 
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
+  has_many :groups
+  has_many :posts, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  
   # validates :sname,
   # presence: true,
   # uniqueness: true,
@@ -13,6 +17,7 @@ class User < ActiveRecord::Base
 
   validates :email,
   uniqueness: true
-
+  validates :sname,
+  uniqueness: true
 
 end

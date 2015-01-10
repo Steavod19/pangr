@@ -13,7 +13,7 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
   <link href='http://fonts.googleapis.com/css?family=Muli:400,400italic' rel='stylesheet' type='text/css'>
-  
+
 </head>
 <body>
   <nav class="top-bar" data-topbar role="navigation">
@@ -32,7 +32,8 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
-        <li><a href=""><%= current_user.sname %></li>
+        <li><a href=""><%= current_user.sname %>
+           <%= image_tag current_user.profile_photo.thumb, class: "profile tiny" %></li></a>
         <li><%= link_to "Create a Group", new_group_path %></li>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>

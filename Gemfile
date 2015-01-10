@@ -12,12 +12,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
 
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 

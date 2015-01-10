@@ -17,7 +17,7 @@ body {
 .banner_text {
   margin-top: 75px;
   margin-left: 90px;
-  font-family: Muli;
+  font-family: 'Muli';
 }
 
 .wrapper {
@@ -28,6 +28,7 @@ body {
   position: absolute;
   top: 75px;
   left: 75px;
+  font-family: 'Muli';
 }
 
 .header_image {
@@ -44,11 +45,6 @@ body {
   .banner {
     margin:  0px;
   }
-}
-
-
-
-a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -68,9 +64,14 @@ h2 {
 // NAV BAR
 // ==========================
 
-  .right li a {
-    padding: 5px;
+  img.profile {
+    &.tiny {
+      border-radius: 50px;
+      margin-left: 5px;
+
     }
+  }
+
   .name h1 a {
     font-family: 'Muli';
     letter-spacing: 2px;
@@ -169,8 +170,16 @@ input:-moz-placeholder { color:#777; }
 // SHOW
 // ==========================
 
+.carrier-wave-field input {
+  color: red;
+}
+
 .top-margin {
   margin-top: 25px;
+}
+
+.margin-bottom {
+  margin-bottom: 25px;
 }
 
 .padding-left {
@@ -181,3 +190,13 @@ input:-moz-placeholder { color:#777; }
   padding: 0;
   margin: 0;
 }
+
+.post_show {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  font-family: 'Muli';
+
+}
+// .panel {
+//   color: #060821;
+// }
