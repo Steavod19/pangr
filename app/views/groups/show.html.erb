@@ -7,12 +7,10 @@
       <p>Description: <%= @group.description %></p>
       <p>Created by: <%= @group.user.sname %></p>
       <% if signed_in? %>
-      <div class="row right">
-        <ul class="button-group">
+        <ul class="row button-group">
           <li><%= link_to "Edit", edit_group_path(@group), class: "tiny button" %></li>
           <li><%= link_to "Delete", group_path(@group), method: :delete, class: "tiny button" %></li>
         </ul>
-      </div>
 
       <% end %>
     </div>
