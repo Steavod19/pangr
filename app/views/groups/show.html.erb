@@ -10,10 +10,13 @@
       </div>
       <% if signed_in? %>
       <div class="medium-4 columns">
-        <ul class="button-group right margin-right">
-          <li><%= link_to "Edit", edit_group_path(@group), class: "tiny button" %></li>
-          <li><%= link_to "Delete", group_path(@group), method: :delete, class: "tiny button" %></li>
-        </ul>
+        <div class="right margin-right">
+          <a href="#" data-dropdown="drop1" class="button dropdown">Options</a>
+          <ul id="drop1" data-dropdown-content class="f-dropdown">
+            <li><%= link_to "Edit", edit_group_path(@group)%></li>
+            <li><%= link_to "Delete", group_path(@group), method: :delete %></li>
+          </ul>
+        </div>
       </div>
 
       <% end %>
@@ -41,17 +44,16 @@
       <div class="medium-2 columns small-3"></div>
         <div class="medium-12 columns">
           <% if signed_in? %>
-          <div class="">
-            <%= form_for([@group, @group.posts.build]) do |f| %>
-            <%= f.label :body, "Post:" %>
-            <%= f.text_area :body, size: "5x5" %>
-            <div class="carrier-wave-field medium-6 columns">
-            <%= f.file_field :post_photo %>
-            </div>
-          </div>
-          <div class="medium-6 columns">
-            <p><%= f.submit 'Post it', class: "small button right" %></p>
-          </div>
+            <%= form_for([@group, @post]) do |f| %>
+              <%= f.label :body, "Post:" %>
+              <%= f.text_area :body, size: "5x5" %>
+              <div class="carrier-wave-field medium-6 columns">
+                <%= f.file_field :post_photo %>
+              </div>
+
+              <div class="medium-6 columns">
+                <p><%= f.submit 'Post', class: "small button right" %></p>
+              </div>
             <% end %>
           <% end %>
       </div>

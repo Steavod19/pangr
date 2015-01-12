@@ -1,0 +1,15 @@
+<div class="columns medium-6 small-12 small-centered sign-up-form text-center">
+
+<div class="padding-top">
+<%= form_for @post do |f| %>
+<p>
+  <%= f.label :body, "Post:", class: "left" %>
+  <%= f.text_area :body, size: "5x5" %>
+</p>
+<p>
+  <%= f.submit 'Post', class: "button"%>
+</p>
+<% end %>
+</div>
+
+</div>

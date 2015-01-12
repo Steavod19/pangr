@@ -24,7 +24,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @post_order = @group.posts.order(created_at: :desc)
+    @post_order = @group.posts.order(created_at: :desc).limit(20)
+    @post = Post.new
   end
 
   def update
