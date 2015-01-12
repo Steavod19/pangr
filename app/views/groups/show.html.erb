@@ -64,7 +64,7 @@
 
     <div class="row">
       <div class="medium-12 columns">
-      <% @group.posts.each do |post| %>
+      <% @post_order.each do |post| %>
         <% unless post.user_id == nil %>
           <% @user = User.find(post.user_id) %>
           <div class="panel radius row user_name post-color">

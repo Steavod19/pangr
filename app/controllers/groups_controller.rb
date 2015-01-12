@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @groups = Group.all
+    @new_groups = Group.last(3)
   end
 
   def new
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    # @post_order = @group.posts.find( :all, :order => "id DESC" )
+    @post_order = @group.posts.order(created_at: :desc)
   end
 
   def update

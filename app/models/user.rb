@@ -9,15 +9,12 @@ class User < ActiveRecord::Base
   has_many :groups
   has_many :posts, dependent: :destroy
   has_many :photos, dependent: :destroy
-  
-  # validates :sname,
-  # presence: true,
-  # uniqueness: true,
-  # length: { maximum: 50 }
 
   validates :email,
+  presence: true,
   uniqueness: true
   validates :sname,
+  presence: true,
   uniqueness: true
 
 end
