@@ -126,7 +126,7 @@ $success-color: #259073;
 // We use these to control various global styles
 // $body-bg: $white;
 // $body-font-color: $jet;
-// $body-font-family: $font-family-sans-serif;
+$body-font-family: 'Muli';
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -255,8 +255,8 @@ $global-radius: 5px;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: white;
+$anchor-font-color-hover: #259073;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;

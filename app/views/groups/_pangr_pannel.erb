@@ -3,8 +3,8 @@
   <% @groups.each do |group| %>
   <li data-orbit-slide="headline-1">
     <div class="box-spacing">
-      <h2><%= group.title %></h2>
-      <h3><%= group.description %></h3>
+      <h2><%= link_to group.title, group_path(group) %></h2>
+      <p><%= group.description %></p>
     </div>
   </li>
   <% end %>
