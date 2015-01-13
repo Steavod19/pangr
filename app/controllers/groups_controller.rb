@@ -4,6 +4,8 @@ class GroupsController < ApplicationController
 
   def index
     @new_groups = Group.last(3)
+    @groups = Group.all.sample(3)
+
   end
 
   def new

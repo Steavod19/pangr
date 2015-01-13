@@ -1,26 +1,25 @@
 
 <div class="container">
-
-  <div class="header_image banner hide-for-small-only">
-    <%= image_tag("pangr_banner.jpg", alt: "banner") %>
-  </div>
-
   <div class="row">
-    <div class="medium-12 columns">
-      <h3 class="banner_text">New Groups</h3>
-      <% @new_groups.each do |group| %>
-      <h5><%= link_to group.title, group, class: "banner_text" %></h5>
-      <% end %>
+    <div class=" banner hide-for-small-only">
+      <div class="header_image ">
+      <%= image_tag("pangr_banner.jpg", alt: "banner", class: "white-line") %>
+        <div class="row">
+          <div class="medium-12 columns panel">
+            <div class="medium-4 columns left position">
+              <%= render "pangr_pannel" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="medium-12 columns">
+        <h3 class="banner_text">New Groups</h3>
+        <% @new_groups.each do |group| %>
+        <h5><%= link_to group.title, group, class: "banner_text" %></h5>
+        <% end %>
+      </div>
     </div>
   </div>
-
-
-  <%= render "pangr_slider" %>
-
-
-
-
-
-
-
 </div>

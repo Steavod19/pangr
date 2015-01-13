@@ -1,0 +1,12 @@
+<div class="group-callout">
+<ul class="example-orbit-content" data-orbit>
+  <% @groups.each do |group| %>
+  <li data-orbit-slide="headline-1">
+    <div class="box-spacing">
+      <h2><%= group.title %></h2>
+      <h3><%= group.description %></h3>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>

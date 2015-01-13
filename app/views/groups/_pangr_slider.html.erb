@@ -1,26 +1,14 @@
 
-<div class="container">
+<div class="orbit-container padding">
+<ul class="example-orbit" data-orbit>
 
-  <div class="header_image banner hide-for-small-only">
-    <%= image_tag("pangr_banner.jpg", alt: "banner") %>
-  </div>
-
-  <div class="row">
-    <div class="medium-12 columns">
-      <h3 class="banner_text">New Groups</h3>
-      <% @new_groups.each do |group| %>
-      <h5><%= link_to group.title, group, class: "banner_text" %></h5>
-      <% end %>
+  <% @post.each do |post| %>
+  <li>
+    <%= image_tag(post.post_photo.postsize) %>
+    <div class="orbit-caption">
+      <%= post.body %>
     </div>
-  </div>
-
-
-  <%= render "pangr_slider" %>
-
-
-
-
-
-
-
+  </li>
+  <% end %>
+</ul>
 </div>
