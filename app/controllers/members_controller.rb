@@ -1,6 +1,19 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
 
+  # def create
+  #   group = current_user.managed_groups.find(params[:id])
+  #   member = group.members.build(member_params)
+  #
+  #   if member.save
+  #     flash[:notice] = "Added user to the group."
+  #   else
+  #     flash[:alert] = "Could not add user to the group."
+  #   end
+  #
+  #   redirect_to group
+  # end
+
   def create
     group = Group.find(params[:group_id])
     member = group.members.build
@@ -26,4 +39,10 @@ class MembersController < ApplicationController
 
     redirect_to group_path(group)
   end
+
+  private
+
+  # def member_params
+  #   params.require(:member).permit(:user_id)
+  # end
 end
