@@ -13,13 +13,9 @@ feature "User deletes a post", %q(
     let(:group){ FactoryGirl.create(:group) }
 
   context "authenticated user" do
-    let(:user){ FactoryGirl.create(:user) }
 
     before(:each) do
-      visit new_user_session_path
-      fill_in "user[email]", with: user.email
-      fill_in "user[password]", with: user.password
-      click_button "Log in"
+      sign_in_as(group.user)
     end
 
     scenario "user successfully deletes a post" do
@@ -29,10 +25,8 @@ feature "User deletes a post", %q(
       fill_in "Post:", with: "This is my comment on the subject"
       click_button "Post"
 
-      click_button "Delete Post"
-      expect(page).to have_content("You've successfully deleted a buddy!")
-
-
+      click_link  "Delete Post"
+      expect(page).to have_content("You've successfully deleted a post!")
     end
   end
 end

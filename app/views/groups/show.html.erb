@@ -6,20 +6,11 @@
       <div class="medium-8 columns">
         <h2 class="white-text"><%= @group.title %></h2>
         <p class="white-text">Description: <%= @group.description %></p>
-        <p class="white-text">Created by: <%= @group.user.sname %></p>
+        <p class="white-text">Created by: <%= @group.owner.sname %></p>
       </div>
-      <% if signed_in? %>
-      <div class="medium-4 columns">
-        <ul class="button-group right margin-right">
-          <li><%= link_to "Edit", edit_group_path(@group), class: "tiny button" %></li>
-          <li><%= link_to "Delete", group_path(@group), method: :delete, class: "tiny button" %></li>
-        </ul>
-      </div>
-
-      <% end %>
+      <%= render "group_option_join" %>
     </div>
   </div>
-</div>
 
 
 <div class="row">
@@ -41,17 +32,16 @@
       <div class="medium-2 columns small-3"></div>
         <div class="medium-12 columns">
           <% if signed_in? %>
-          <div class="">
-            <%= form_for([@group, @group.posts.build]) do |f| %>
-            <%= f.label :body, "Post:" %>
-            <%= f.text_area :body, size: "5x5" %>
-            <div class="carrier-wave-field medium-6 columns">
-            <%= f.file_field :post_photo %>
-            </div>
-          </div>
-          <div class="medium-6 columns">
-            <p><%= f.submit 'Post it', class: "small button right" %></p>
-          </div>
+            <%= form_for([@group, @post]) do |f| %>
+              <%= f.label :body, "Post:" %>
+              <%= f.text_area :body, size: "5x5" %>
+              <div class="carrier-wave-field medium-6 columns">
+                <%= f.file_field :post_photo %>
+              </div>
+
+              <div class="medium-6 columns">
+                <p><%= f.submit 'Post', class: "small button right" %></p>
+              </div>
             <% end %>
           <% end %>
       </div>
@@ -64,7 +54,7 @@
 
     <div class="row">
       <div class="medium-12 columns">
-      <% @post_order.each do |post| %>
+      <% @group.latest_posts(20).each do |post| %>
         <% unless post.user_id == nil %>
           <% @user = User.find(post.user_id) %>
           <div class="panel radius row user_name post-color">
@@ -77,8 +67,8 @@
             <li><a href="">Reply</a></li>
             <% if signed_in? %>
               <% if current_user.id == post.user_id %>
-                <li><%= link_to "Edit Post", edit_group_post_path(@group, post) %></li>
-                <li><%= link_to "Delete Post", group_post_path(@group, post), method: :delete %></li>
+                <li><%= link_to "Edit Post", edit_post_path(post) %></li>
+                <li><%= link_to "Delete Post", post_path(post), method: :delete %></li>
                 <% end %>
               <% end %>
           </ul>

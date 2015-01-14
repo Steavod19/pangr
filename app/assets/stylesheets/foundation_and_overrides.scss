@@ -126,7 +126,7 @@ $success-color: #259073;
 // We use these to control various global styles
 // $body-bg: $white;
 // $body-font-color: $jet;
-// $body-font-family: $font-family-sans-serif;
+$body-font-family: 'Muli';
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -255,8 +255,8 @@ $global-radius: 5px;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: white;
+$anchor-font-color-hover: #259073;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -894,7 +894,7 @@ $button-bg-color: #259073;
 
 // We use these to control the timer styles
 // $orbit-timer-bg: rgba(255,255,255,0.3);
-// $orbit-timer-show-progress-bar: true;
+$orbit-timer-show-progress-bar: false;
 
 // We use these to control the bullet nav styles
 // $orbit-bullet-nav-color: $iron;
@@ -903,13 +903,13 @@ $button-bg-color: #259073;
 
 // We use these to controls the style of slide numbers
 // $orbit-slide-number-bg: rgba(0,0,0,0);
-// $orbit-slide-number-font-color: $white;
+$orbit-slide-number-font-color: transparent;
 // $orbit-slide-number-padding: rem-calc(5);
 
 // Hide controls on small
-// $orbit-nav-hide-for-small: true;
-// $orbit-bullet-hide-for-small: true;
-// $orbit-timer-hide-for-small: true;
+$orbit-nav-hide-for-small: true;
+$orbit-bullet-hide-for-small: true;
+$orbit-timer-hide-for-small: true;
 
 // Graceful Loading Wrapper and preloader
 // $wrapper-class: "slideshow-wrapper";
@@ -954,7 +954,7 @@ $button-bg-color: #259073;
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
+$panel-bg: scale-color(#060821, $lightness: -5%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 

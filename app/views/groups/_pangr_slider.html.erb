@@ -1,0 +1,14 @@
+
+<div class="orbit-container padding">
+<ul class="example-orbit" data-orbit>
+
+  <% @post.each do |post| %>
+  <li>
+    <%= image_tag(post.post_photo.postsize) %>
+    <div class="orbit-caption">
+      <%= post.body %>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>
