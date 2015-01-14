@@ -6,9 +6,14 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
-  has_many :groups
   has_many :posts, dependent: :destroy
   has_many :photos, dependent: :destroy
+
+  has_many :managed_groups, class_name: "Group", foreign_key: :owner_id
+  has_many :members
+  has_many :groups, through: :members
+
+
 
   validates :email,
   presence: true,

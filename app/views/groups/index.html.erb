@@ -5,19 +5,22 @@
       <div class="header_image ">
       <%= image_tag("pangr_banner.jpg", alt: "banner", class: "white-line") %>
         <div class="row">
-          <div class="medium-12 columns panel">
-            <div class="medium-4 columns left position">
-              <%= render "pangr_pannel" %>
+          <div class="large-12 columns panel">
+            <h2 class="text-center panel-title">See More</h2>
+
+            <div class="large-12 columns panel">
+            <%= render "group_pannel" %>
             </div>
+
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="medium-12 columns">
-        <h3 class="banner_text">New Groups</h3>
+        <h2 class="banner_text"><strong>New Groups</strong></h2>
         <% @new_groups.each do |group| %>
-        <h5><%= link_to group.title, group, class: "banner_text" %></h5>
+        <h4><%= link_to group.title, group, class: "banner_text" %></h4>
         <% end %>
       </div>
     </div>

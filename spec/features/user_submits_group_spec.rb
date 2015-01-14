@@ -16,16 +16,12 @@ feature "User Submits a new group", %q(
     let(:user){ FactoryGirl.create(:user) }
 
     before(:each) do
-      visit new_user_session_path
-      fill_in "user[email]", with: user.email
-      fill_in "user[password]", with: user.password
-      click_button "Log in"
+      sign_in_as(group.user)
     end
 
     scenario "user successfully submits a group" do
 
-      visit root_path
-      click_link "Create a Group"
+      visit new_group_path
       fill_in "Title", with: "Car Talk"
       fill_in "Description", with: "lots of cars and junk"
 

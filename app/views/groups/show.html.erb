@@ -6,23 +6,11 @@
       <div class="medium-8 columns">
         <h2 class="white-text"><%= @group.title %></h2>
         <p class="white-text">Description: <%= @group.description %></p>
-        <p class="white-text">Created by: <%= @group.user.sname %></p>
+        <p class="white-text">Created by: <%= @group.owner.sname %></p>
       </div>
-      <% if signed_in? %>
-      <div class="medium-4 columns">
-        <div class="right margin-right">
-          <a href="#" data-dropdown="drop1" class="button dropdown">Options</a>
-          <ul id="drop1" data-dropdown-content class="f-dropdown">
-            <li><%= link_to "Edit", edit_group_path(@group)%></li>
-            <li><%= link_to "Delete", group_path(@group), method: :delete %></li>
-          </ul>
-        </div>
-      </div>
-
-      <% end %>
+      <%= render "group_option_join" %>
     </div>
   </div>
-</div>
 
 
 <div class="row">
