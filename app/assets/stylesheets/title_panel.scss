@@ -1,0 +1,30 @@
+
+.title_text {
+
+  font-family: 'Muli';
+  font-size: 300px;
+  letter-spacing: 2px;
+  font-style: bold;
+  margin-top: -100px;
+  padding-left: 400px;
+  letter-spacing: 2px;
+
+
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}
+
+.white-panel {
+  background-color: #787A88;
+  height: 200px;
+  overflow: hidden;
+  background-image: image-url("pangr800.png");
+  background-size: cover;
+  background-position: 10% 50%;
+  background-attachment: fixed;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  border: 5px solid white;
+
+}

@@ -3,11 +3,13 @@
     <div class="right margin-right">
       <a href="#" data-dropdown="drop1" class="button dropdown">Options</a>
       <ul id="drop1" data-dropdown-content class="f-dropdown">
-        <li><%= link_to "Edit Group", edit_group_path(@group)%></li>
         <% if current_user.groups.include?(@group) %>
           <li><%= link_to "Leave Group", group_member_path(@group, @member), method: :delete %></li>
         <% end %>
-        <li><%= link_to "Delete Group", group_path(@group), method: :delete %></li>
+        <% if current_user.managed_groups.include?(@group) %>
+          <li><%= link_to "Edit Group", edit_group_path(@group)%></li>
+          <li><%= link_to "Delete Group", group_path(@group), method: :delete %></li>
+        <% end %>
       </ul>
     </div>
     <% unless current_user.groups.include?(@group) %>

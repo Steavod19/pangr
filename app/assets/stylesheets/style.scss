@@ -3,51 +3,6 @@ body {
   font-family: 'Muli';
 }
 
-.container {
-  position: relative;
-}
-
-.container .columns {
-  position: relative;
-}
-
-.banner_text {
-  margin-top: 75px;
-  margin-left: 90px;
-  font-family: 'Muli';
-}
-
-.wrapper {
-  max-width: none;
-}
-
-.group-block {
-  position: absolute;
-  top: 75px;
-  left: 75px;
-  font-family: 'Muli';
-}
-
-.white-line {
-  border-bottom: 3px solid white;
-
-}
-
-.header_image {
-  position: absolute;
-  top: 0;
-  &.row {
-    max-width: none;
-  }
-  .columns {
-    padding: 0px;
-    margin: 0px;
-  }
-  .banner {
-    margin:  0px;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Muli';
 }
