@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
-    @group = Group.find(params[:group_id])
+    @group = current_user.groups.find(params[:group_id])
     @post = @group.posts.build(post_params)
     @post.user = current_user
 
     if @post.save
-      redirect_to group_path(@group), notice: "You've successfully submitted a post!"
+      flash[:notice] = "You've successfully submitted a post!"
+      redirect_to group_path(@group)
     else
       flash[:alert] = @post.errors.full_messages.join(".  ")
-      redirect_to group_path(@group)
+      render "groups/show"
     end
   end
 
@@ -19,10 +21,10 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    @group = @post.group
+
     if @post.update(post_params)
       flash[:notice] = "You've successfully updated your post!"
-      redirect_to @group
+      redirect_to @post.group
     else
       flash[:alert] = "Body cannot be blank"
       render 'edit'
@@ -30,22 +32,21 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @group = @post.group
-    if current_user.id == @post.user_id
-      @post.destroy
+    post = current_user.posts.find(params[:id])
+    group = post.group
+
+    if post.destroy
       flash[:notice] = "You've successfully deleted a post!"
     else
-      flash[:alert] = "You are not authorized to do this."
+      flash[:alert] = "Sorry, could not delete the post at this time."
     end
-    redirect_to group_path(@group)
+
+    redirect_to group_path(group)
   end
 
-
   private
+
   def post_params
     params.require(:post).permit(:body, :post_photo)
   end
-
-
 end

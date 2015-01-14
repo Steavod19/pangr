@@ -3,16 +3,17 @@ class GroupsController < ApplicationController
 
   def index
     @new_groups = Group.last(3)
-    @groups = Group.all.sample(3)
-    @posts = Post.all.sample(5)
+    @groups = Group.random(3)
+    @posts = Post.random(3)
   end
 
   def new
-    @group = current_user.groups.build
+    @group = current_user.managed_groups.build
   end
 
   def create
     @group = current_user.managed_groups.build(group_params)
+
     if @group.save
       flash[:notice] = "You've successfully created a group!"
       redirect_to @group
@@ -24,10 +25,8 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @post_order = @group.posts.order(created_at: :desc).limit(20)
     @post = Post.new
-    @member = Member.find_or_initialize_by(group: @group, user_id: current_user.id)
-
+    @member = @group.members.find_or_initialize_by(user: current_user)
   end
 
   def update

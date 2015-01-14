@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   validates :body, presence: true
 
-
-
-
+  def self.random(count)
+    order("RANDOM()").limit(count)
+  end
 end

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :posts, only: [:create]
     resources :members, only: [:create, :destroy]
   end
+
+  resources :posts, only: [:edit, :update, :destroy]
 end
