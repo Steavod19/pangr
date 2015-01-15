@@ -127,6 +127,11 @@ input:-moz-placeholder { color:#777; }
 // SHOW
 // ==========================
 
+.post-image {
+  max-width:100%;
+  content: center;
+}
+
 .carrier-wave-field input {
   color: black;
 }

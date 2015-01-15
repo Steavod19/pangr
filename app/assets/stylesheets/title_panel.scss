@@ -1,5 +1,5 @@
 
-.title_text {
+.title-text {
 
   font-family: 'Muli';
   font-size: 300px;
@@ -21,10 +21,37 @@
   overflow: hidden;
   background-image: image-url("pangr800.png");
   background-size: cover;
-  background-position: 10% 50%;
+  background-position: 10% 130%;
   background-attachment: fixed;
-  background-size: 700px;
+  background-size: 600px;
   background-repeat: no-repeat;
-  border: 5px solid white;
+
+}
+
+.blue-panel {
+  // background-color: #060821;
+  background-image: image-url("pangr_banner.jpg");
+  height: 100%;
+  overflow: hidden;
+  margin-top: -20px;
+
+  // background-position: cover;
+  // background-position: 10% 50%;
+  // background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+}
+
+.small-title-text {
+
+  font-family: 'Muli';
+  font-size: 75px;
+  letter-spacing: 2px;
+  font-style: bold;
+  // margin-top: -100px;
+  // padding-left: 400px;
+  letter-spacing: 2px;
+  color: white;
 
 }

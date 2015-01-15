@@ -59,7 +59,7 @@
           <% @user = User.find(post.user_id) %>
           <div class="panel radius row user_name post-color">
             <p class="post_show"><%= @user.sname %>:</p>
-            <p><%= image_tag(post.post_photo) %></p>
+            <img class="post-image"><%= image_tag(post.post_photo) %>
             <p class="post_show"><%= post.body %></p>
           </div>
           <div class="medium-12 ">
@@ -74,8 +74,6 @@
           </ul>
         </div>
         <hr/>
-
-
           <% end %>
         <% end %>
     </div>
