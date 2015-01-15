@@ -36,6 +36,7 @@ h2 {
   .logo {
     margin-top: 5px;
     margin-right: -20px;
+
   }
 
 
@@ -180,6 +181,40 @@ input:-moz-placeholder { color:#777; }
 
 
 }
-// .panel {
-//   color: #060821;
-// }
+.container {
+  background-color: #060821;
+}
+
+//==========================
+// Alert Box
+//=========================
+
+.alert-box {
+  z-index: 100;
+  width: 50%;
+  height: 50px;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 10; right: 0;
+  background: #060821;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.9);
+
+}
+
+.alert-box:before {
+  top: 0; right: 0; left: 0;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+.close-color a{
+  background-color: transparent;
+}
+
+.padding-aside {
+  padding: 20px;
+}

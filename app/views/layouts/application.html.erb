@@ -47,12 +47,12 @@
       </ul>
     </section>
   </nav>
+  <%= render 'layouts/flash' %>
 
   <div class="row wrapper">
-      <%= render 'layouts/flash' %>
-
       <%= yield %>
       <%= javascript_include_tag "application" %>
   </div>
+
 </body>
 </html>

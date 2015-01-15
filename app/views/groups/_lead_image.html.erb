@@ -1,14 +1,14 @@
-<div class="container hide-for-small-only">
+<div class="hide-for-medium-down">
   <div class="row ">
     <%= image_tag("pangr_banner.jpg", alt: "banner", class: "white-line header_image") %>
     <div class="text-overlay show-for-large-up">
       <div class="row box">
         <div class="medium-11 columns group-text ">
           <div class="banner_text"><p><strong>Pangr's Newest Groups:</strong></p>
-          <% @new_groups.each do |group| %>
-          <h4><%= link_to group.title, group %></h4>
+            <% @new_groups.each do |group| %>
+            <h4><%= link_to group.title, group %></h4>
           <% end %>
-        </div>
+          </div>
         </div>
       </div>
     </div>

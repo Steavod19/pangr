@@ -136,7 +136,7 @@ $body-font-family: 'Muli';
 // We use these to control text direction settings
 // $text-direction: ltr;
 // $opposite-direction: right;
-// $default-float: left;
+$default-float: center;
 // $last-child-float: $opposite-direction;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -334,25 +334,25 @@ $anchor-font-color-hover: #259073;
 // $include-html-alert-classes: $include-html-classes;
 
 // We use this to control alert padding.
-// $alert-padding-top: rem-calc(14);
-// $alert-padding-default-float: $alert-padding-top;
-// $alert-padding-opposite-direction: $alert-padding-top + rem-calc(10);
-// $alert-padding-bottom: $alert-padding-top;
+$alert-padding-top: rem-calc(20);
+$alert-padding-default-float: $alert-padding-top;
+$alert-padding-opposite-direction: $alert-padding-top + rem-calc(20);
+$alert-padding-bottom: 0px;
 
 // We use these to control text style.
 // $alert-font-weight: $font-weight-normal;
-// $alert-font-size: rem-calc(13);
+$alert-font-size: rem-calc(30);
 // $alert-font-color: $white;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
 // We use this for close hover effect.
-// $alert-function-factor: -14%;
+$alert-function-factor: -30%;
 
 // We use these to control border styles.
-// $alert-border-style: solid;
-// $alert-border-width: 1px;
+$alert-border-style: solid;
+$alert-border-width: 0;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
-// $alert-bottom-margin: rem-calc(20);
+$alert-bottom-margin: rem-calc(0);
 
 // We use these to style the close buttons
 // $alert-close-color: $oil;

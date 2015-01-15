@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
   presence: true,
   uniqueness: true
 
+  def latest_posts(count)
+    posts.order(created_at: :desc).limit(count)
+  end
+
 end
