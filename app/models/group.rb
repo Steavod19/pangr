@@ -21,4 +21,6 @@ class Group < ActiveRecord::Base
   def self.random(count)
     order("RANDOM()").limit(count)
   end
+
+
 end

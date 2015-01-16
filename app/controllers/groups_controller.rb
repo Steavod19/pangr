@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
     @new_groups = Group.last(3)
     @groups = Group.random(3)
     @posts = Post.random(3)
+    @images = Post.gimme_images
   end
 
   def new

@@ -1,10 +1,10 @@
-<!-- <div class="container"> -->
+<div class="row panel image-panel">
+  <div class="large-12 columns">
 
-<div class="row first-pan show-for-medium-up">
-  <!-- <h1 class="title-text">Pangr</h1> -->
+    <ul class="medium-block-grid-4 center collapse">
+      <% @images.each do |post| %>
+          <li class="block-image"><%= image_tag(post.post_photo.panel) %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-<!-- </div> -->
-
-<!-- <div class="row  blue-panel text-center show-for-small-only">
-  <h4 class="small-title-text">Pangr</h4>
-</div> -->
