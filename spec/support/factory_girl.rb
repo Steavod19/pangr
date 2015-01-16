@@ -12,7 +12,8 @@ FactoryGirl.define do
   factory :group do
     title "Car Talk"
     description "this is the description of the group"
-    user
+    association :owner, factory: :user
+
   end
 
   factory :post do

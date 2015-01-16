@@ -5,8 +5,8 @@
     <div class="panel post-color radius top-margin padding-left padding-top columns">
       <div class="medium-8 columns">
         <h2 class="white-text"><%= @group.title %></h2>
-        <p class="white-text">Description: <%= @group.description %></p>
-        <p class="white-text">Created by: <%= @group.owner.sname %></p>
+        <p class="white-text"><%= @group.description %></p>
+        <p class="white-text">Owner: <%= @group.owner.sname %></p>
       </div>
       <%= render "group_option_join" %>
     </div>
@@ -64,6 +64,7 @@
 
               <% end %>
             <div>
+              &nbsp;
               <h4>Latest posts:</h4>
             </div>
             <hr/>
@@ -80,7 +81,6 @@
           </div>
           <div class="medium-12 ">
           <ul class="button-group inline-list right">
-            <li><a href="">Reply</a></li>
             <% if signed_in? %>
               <% if current_user.id == post.user_id %>
                 <li><%= link_to "Edit Post", edit_post_path(post) %></li>

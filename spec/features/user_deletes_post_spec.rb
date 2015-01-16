@@ -10,18 +10,20 @@ feature "User deletes a post", %q(
   [ ] User must be able to delete post
 
   ) do
-    let(:group){ FactoryGirl.create(:group) }
 
   context "authenticated user" do
 
+    let(:user){ FactoryGirl.create(:user) }
     before(:each) do
-      sign_in_as(group.user)
+      sign_in_as(user)
     end
+    let(:group){ FactoryGirl.create(:group) }
+
 
     scenario "user successfully deletes a post" do
 
       visit group_path(group)
-
+      click_on  "Join Group"
       fill_in "Post:", with: "This is my comment on the subject"
       click_button "Post"
 

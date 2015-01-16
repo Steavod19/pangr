@@ -1,0 +1,9 @@
+<div class="search-color">
+<div class="row collapse col-padding search">
+      <% @group_search.each do |group| %>
+    <div class="small-3 columns end">
+      <p><%= link_to group.title, group %></p>
+    </div>
+      <% end %>
+</div>
+</div>

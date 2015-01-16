@@ -22,5 +22,8 @@ class Group < ActiveRecord::Base
     order("RANDOM()").limit(count)
   end
 
+  def self.search(query)
+    where("title ILIKE ?", "%#{query}%")
+  end
 
 end

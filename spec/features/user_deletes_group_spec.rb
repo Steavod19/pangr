@@ -10,19 +10,24 @@
     [ ] User must delete group
 
     ) do
-      let(:group){ FactoryGirl.create(:group) }
+
 
     context "authenticated user" do
 
-        before(:each) do
-          sign_in_as(group.user)
-        end
+      let(:user){ FactoryGirl.create(:user) }
+      before(:each) do
+        sign_in_as(user)
+      end
 
     scenario "user successfully deletes a group" do
 
-      visit group_path(group)
+      group = FactoryGirl.create :group
 
-      click_link "Delete"
+      visit group_path(group)
+      click_on "Join Group"
+      click_on "Options"
+      click_on "Delete Group"
+
       expect(page).to have_content("You've successfully deleted a group!")
     end
   end

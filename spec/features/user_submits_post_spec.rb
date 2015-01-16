@@ -11,17 +11,21 @@ feature "User Submits a new post", %q(
   [ ] User must enter description
 
   ) do
-    let(:group){ FactoryGirl.create(:group) }
 
   context "authenticated user" do
+
+    let(:user){ FactoryGirl.create(:user) }
     before(:each) do
-      sign_in_as(group.user)
+      sign_in_as(user)
     end
 
-    scenario "user successfully submits a post" do
+    scenario "successfully submits a post" do
+
+      group = FactoryGirl.create :group
 
       visit group_path(group)
 
+      click_on "Join Group"
       fill_in "Post:", with: "This is my comment on the subject"
       click_button "Post"
 
@@ -30,11 +34,15 @@ feature "User Submits a new post", %q(
 
     end
 
-    scenario "user unsuccessfully submits a post" do
+    scenario "unsuccessfully submits a post" do
+      group = FactoryGirl.create :group
 
       visit group_path(group)
-      fill_in "Post:", with: ""
-      click_button "Post"
+
+      click_on "Join Group"
+      fill_in "post_body", with: ""
+      click_on "Post"
+      save_and_open_page
       expect(page).to have_content("Body can't be blank")
     end
   end

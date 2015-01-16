@@ -1,9 +1,9 @@
-<div class="row panel image-panel">
+<div class="panel image-panel">
   <div class="large-12 columns">
 
     <ul class="medium-block-grid-4 center collapse">
       <% @images.each do |post| %>
-          <li class="block-image"><%= image_tag(post.post_photo.panel) %></li>
+          <li class="block-image"><%= link_to image_tag(post.post_photo.panel), group_path(post.group) %></li>
       <% end %>
     </ul>
   </div>

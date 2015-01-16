@@ -2,6 +2,12 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    if params[:query]
+      @group_search = Group.search(params[:query])
+    else
+      @group_search = []
+    end
+
     @new_groups = Group.last(3)
     @groups = Group.random(3)
     @posts = Post.random(3)

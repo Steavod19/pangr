@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       redirect_to group_path(@group)
     else
       flash[:alert] = @post.errors.full_messages.join(".  ")
-      render "groups/show"
+      redirect_to group_path(@group)
     end
   end
 
