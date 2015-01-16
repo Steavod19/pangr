@@ -19,12 +19,12 @@
   background-color: #787A88;
   height: 75px;
   overflow: hidden;
-  background-image: image-url("pangr800.png");
-  background-size: cover;
-  background-position: 10% 130%;
+  background-image: image-url("link-pattern.jpg");
+  // background-size: cover;
+  // background-position: 10% 130%;
   background-attachment: fixed;
   // background-size: 600px;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
 
 }
 
@@ -34,7 +34,22 @@
   height: 100%;
   overflow: hidden;
   margin-top: -20px;
+  min-width: 100%;
+  // background-position: cover;
+  // background-position: 10% 50%;
+  // background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
+}
+
+.medium-panel {
+  // background-color: #060821;
+  background-image: image-url("pangr_banner.jpg");
+  height: 200px;
+  overflow: hidden;
+  margin-top: -20px;
+  min-width: 100%;
   // background-position: cover;
   // background-position: 10% 50%;
   // background-attachment: fixed;
@@ -53,5 +68,19 @@
   // padding-left: 400px;
   letter-spacing: 2px;
   color: white;
+  text-shadow: 0 0 3px black, 0 0 5px black;
 
+}
+
+.medium-title-text {
+  padding-top: 50px;
+  font-family: 'Muli';
+  font-size: 75px;
+  letter-spacing: 2px;
+  font-style: bold;
+  // margin-top: -100px;
+  // padding-left: 400px;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0 0 3px black, 0 0 5px black;
 }
