@@ -17,7 +17,7 @@
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area inline-list">
       <li class="logo">
-        <h1><%= image_tag("pangr400.png", size: "75x75", :alt => "logo") %></h1>
+        <h1><%= link_to image_tag("pangr400.png", size: "75x75", alt: "logo"), root_path %></h1>
       </li>
       <li class="name">
         <h1><%= link_to Pangr, root_path %></h1>
@@ -30,10 +30,12 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if user_signed_in? %>
-        <li class="has-dropdown"><a href="#">
-          <%= current_user.sname %>
-           <%= image_tag current_user.profile_photo.thumb, class: "profile tiny" %>
-           </a>
+        <li class="has-dropdown sname-link"><a>
+          <%= link_to user_path(current_user) do %>
+            <%= current_user.sname %>
+            <%= image_tag current_user.profile_photo.thumb, class: "profile tiny" %>
+          <% end %>
+         </a>
            <ul class="dropdown">
              <li><%= link_to "Create a Group", new_group_path %></li>
              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
@@ -52,7 +54,13 @@
   <div class="wrapper">
       <%= yield %>
       <%= javascript_include_tag "application" %>
-  </div>
 
+  </div>
+  <script src="/js/vendor/jquery.js"></script>
+  <script src="/js/vendor/fastclick.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script>
+  $(document).foundation();
+  </script>
 </body>
 </html>

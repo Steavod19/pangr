@@ -38,7 +38,7 @@ class PostPhotoUploader < CarrierWave::Uploader::Base
   #   process :resize_to_fit => [50, 50]
   # end
   version :postsize do
-    process :resize_to_fill => [500, 500, 'Center']
+    process :resize_to_fit => [800, 800]
   end
 
   version :panel do

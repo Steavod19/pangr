@@ -1,0 +1,61 @@
+<div class="row row-spacing">
+
+<div class="medium-12 columns ">
+  <div class="panel radius user-panel-position">
+    <h2 class="white-text"><%= @user.sname %></h2>
+    <p class="white-text"><%= @user.email %></p>
+  </div>
+
+</div>
+
+        <div class="medium-9 columns radius user-panel-position">
+  <div>
+    <p>Your Pangr Feed</p>
+  </div>
+  <hr/>
+          <% @post_arr.each do |post| %>
+          <div class="panel radius row user_name">
+            <p class="post_show"><%= link_to post.group.title, group_path(post.group) %></p>
+            <p class="post_show"><%= post.user.sname %>:</p>
+            <img class="post-image"><%= image_tag(post.post_photo.postsize) %>
+            <p class="post_show"><%= post.body %></p>
+          </div>
+          <div class="medium-12 ">
+            <ul class="button-group inline-list right">
+              <% if signed_in? %>
+              <% if current_user.id == post.user_id %>
+              <li><%= link_to "Edit Post", edit_post_path(post) %></li>
+              <li><%= link_to "Delete Post", post_path(post), method: :delete %></li>
+              <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <hr/>
+
+          <% end %>
+
+
+
+  </div>
+
+
+
+
+  <div class="medium-3 columns panel radius user-info-panel ">
+    <p><%= image_tag current_user.profile_photo.medium %></p>
+
+    <div class="top-margin text-center">
+      <h3><a href="#"><%= current_user.sname %></a></h3>
+      <hr/>
+      <h4 class="title white-text">Your Groups</h4>
+      &nbsp;
+      <% current_user.groups.each do |group| %>
+      <p><%= link_to group.title, group_path(group) %></p>
+      <% end %>
+    </div>
+
+  </div>
+
+
+
+</div>

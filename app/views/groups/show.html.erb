@@ -1,6 +1,6 @@
 
 
-<div class="row row-padding">
+<div class="row">
   <div class="large-12 columns">
     <div class="panel post-color radius top-margin padding-left padding-top columns">
       <div class="medium-8 columns">
@@ -13,13 +13,13 @@
   </div>
 </div>
 
-<div class="row row-padding">
+<div class="row">
 
       <% if signed_in? %>
 
       <div class="medium-4 columns ">
         <div class="panel radius post-color">
-          <a href="#"><%= image_tag current_user.profile_photo, class: "show_profile_img center" %></a>
+          <a href="#"><%= image_tag current_user.profile_photo.medium, class: "show_profile_img center" %></a>
           <div class="top-margin text-center">
             <h3><a href="#"><%= current_user.sname %></a></h3>
             <hr/>
@@ -34,7 +34,7 @@
 
       <% else %>
 
-        <div class="panel radius post-color">
+        <div class="panel radius post-color left">
           <div class="top-margin text-center">
             <h4 class="title white-text text-center">Pangr Groups</h4>
             &nbsp;
@@ -46,37 +46,34 @@
 
 
         <% end  %>
-        <div class="medium-8 columns">
-            <% if signed_in? %>
-              <% if current_user.groups.include?(@group) %>
+        <div class="medium-8 columns right">
+          <% if signed_in? %>
+            <% if current_user.groups.include?(@group) %>
               <%= form_for([@group, @post]) do |f| %>
               <%= f.label :body, "Post:" %>
               <%= f.text_area :body, size: "5x5" %>
-              <div class="carrier-wave-field medium-6 columns">
+              <div class="carrier-wave-field medium-6 columns padding-left">
                 <%= f.file_field :post_photo %>
               </div>
               <div class="medium-6 columns">
                 <p><%= f.submit 'Post', class: "small button right" %></p>
               </div>
               <% end %>
-
-              <% end %>
-
-              <% end %>
+            <% end %>
+          <% end %>
             <div>
               &nbsp;
               <h4>Latest posts:</h4>
             </div>
             <hr/>
 
-    <div class="row">
       <div class="medium-12 columns padding-right left">
         <% @group.latest_posts(20).each do |post| %>
         <% unless post.user_id == nil %>
         <% @user = User.find(post.user_id) %>
           <div class="panel radius row user_name post-color">
             <p class="post_show"><%= @user.sname %>:</p>
-            <img class="post-image"><%= image_tag(post.post_photo) %>
+            <img class="post-image"><%= image_tag(post.post_photo.postsize) %>
             <p class="post_show"><%= post.body %></p>
           </div>
           <div class="medium-12 ">
@@ -94,4 +91,3 @@
         <% end %>
     </div>
   </div>
-</div>
