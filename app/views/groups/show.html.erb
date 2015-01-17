@@ -72,7 +72,7 @@
         <% unless post.user_id == nil %>
         <% @user = User.find(post.user_id) %>
           <div class="panel radius row user_name post-color">
-            <p class="post_show"><%= @user.sname %>:</p>
+            <p class="post_show"><%=link_to @user.sname, user_path(post.user) %>:</p>
             <img class="post-image"><%= image_tag(post.post_photo.postsize) %>
             <p class="post_show"><%= post.body %></p>
           </div>
