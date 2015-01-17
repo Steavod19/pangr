@@ -16,7 +16,7 @@
           <% @post_arr.each do |post| %>
           <div class="panel radius row user_name">
             <p class="post_show"><%= link_to post.group.title, group_path(post.group) %></p>
-            <p class="post_show"><%= post.user.sname %>:</p>
+            <p class="post_show"><%= link_to post.user.sname, user_path(post.user) %>:</p>
             <img class="post-image"><%= image_tag(post.post_photo.postsize) %>
             <p class="post_show"><%= post.body %></p>
           </div>
@@ -42,12 +42,12 @@
 
 
   <div class="medium-3 columns panel radius user-info-panel ">
-    <p><%= image_tag current_user.profile_photo.medium %></p>
+    <p><%= image_tag @user.profile_photo.medium, class: "radius" %></p>
 
     <div class="top-margin text-center">
-      <h3><a href="#"><%= current_user.sname %></a></h3>
+      <h4><%= @user.sname %></h4>
       <hr/>
-      <h4 class="title white-text">Your Groups</h4>
+      <!-- <h4 class="title white-text">Groups</h4> -->
       &nbsp;
       <% current_user.groups.each do |group| %>
       <p><%= link_to group.title, group_path(group) %></p>
