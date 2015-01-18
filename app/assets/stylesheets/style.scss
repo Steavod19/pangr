@@ -26,20 +26,20 @@ h2 {
     &.tiny {
       border-radius: 50px;
       margin-left: 35px;
-
     }
   }
 
-  .name h1 a {
+  .name-title {
     font-family: 'Muli';
     letter-spacing: 2px;
-  }
+    padding-top: 10px;
+    padding-left: -10px;
 
+  }
 
   .logo {
     margin-top: 5px;
-    padding-left: 30px;
-
+    padding-left: 0px;
   }
 
 

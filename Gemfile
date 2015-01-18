@@ -13,6 +13,7 @@ gem 'unicorn'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'foundation-icons-sass-rails'
 
 group :development, :test do
   gem 'byebug'
@@ -21,6 +22,10 @@ group :development, :test do
   gem 'spring'
   gem 'dotenv-rails'
 end
+
+
+
+
 
 
 gem 'rspec-rails', group: [:development, :test]
