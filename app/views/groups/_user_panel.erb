@@ -1,0 +1,21 @@
+<div class="row group-panel-title panel group-panel">
+  <h4 class="text-center">Featured Pangr-er</h4>
+</div>
+
+
+
+<div class="row center">
+    <ul class="medium-block-grid-3 medium-centered post-call-out">
+    <% @featured_user.each do |user| %>
+        <li class="block-image text-center"><p><%= link_to image_tag(user.profile_photo.callout), user_path(user) %></p>
+        <h2><%= link_to user.sname, user_path(user) %></h2></li>
+    <% end %>
+    <% @user_posts.each do |post| %>
+    <li class="block-image">
+      <p><%= link_to image_tag(post.post_photo.panel), user_path(post.user) %></p>
+      <p><%= truncate(post.body, :length => 60) %></p>
+    </li>
+
+    <% end %>
+  </ul>
+</div>

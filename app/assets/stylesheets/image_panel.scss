@@ -1,18 +1,14 @@
 
 
 .image-panel {
-  background-color: #20244E;
+  background-color: white;
   max-height: auto;
   overflow: hidden;
-  padding-bottom: 0px;
-  // background-image: image-url("link-pattern.jpg");
-  // background-size: cover;
-  // background-position: 10% 130%;
-  // background-attachment: fixed;
-  // background-size: 600px;
-  // background-repeat: no-repeat;
+  padding-bottom: 90px;
+
 }
-// .block-image {
-//   // border: 5px solid white;
-//
-// }
+.image-panel h4 {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  color: #060821;
+}

@@ -12,6 +12,8 @@ class GroupsController < ApplicationController
     @groups = Group.random(3)
     @posts = Post.random(3)
     @images = Post.gimme_images
+    @featured_user = User.random(1)
+    @user_posts = @featured_user.first.posts.sample(2)
   end
 
   def new

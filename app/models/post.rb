@@ -14,4 +14,8 @@ class Post < ActiveRecord::Base
     where.not(post_photo: nil).random(4)
   end
 
+  def self.get_image
+    where.not(post_photo: nil).random(1)
+  end
+
 end

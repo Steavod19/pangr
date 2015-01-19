@@ -56,8 +56,17 @@
       <%= javascript_include_tag "application" %>
 
   </div>
-<footer>
+
+
+<footer class="site-footer">
   <%= render 'layouts/footer' %>
 </footer>
+<%= render 'layouts/joyride' %>
+<%= javascript_include_tag 'application' %>
+<%= javascript_tag do %>
+$(function(){
+  $(document).foundation();
+});
+<% end %>
 </body>
 </html>

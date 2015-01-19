@@ -1,6 +1,7 @@
 body {
   background-color: #D3D1C9;
   font-family: 'Muli';
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,10 +33,18 @@ h2 {
   .name-title {
     font-family: 'Muli';
     letter-spacing: 2px;
-    padding-top: 10px;
-    padding-left: -10px;
+    margin-top: 10px;
+  }
+
+  .top-bar h1 {
+    font-size: 45px;
+    margin-left: -15px;
 
   }
+  .title-area {
+    padding-left: 20px;
+  }
+
 
   .logo {
     margin-top: 5px;

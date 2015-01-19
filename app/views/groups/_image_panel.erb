@@ -1,10 +1,12 @@
-<div class="panel image-panel">
-  <div class="large-12 columns">
+<div class="panel image-panel image-row">
+  <div class="row">
+  <h4 class="text-center">Recently Added Images</h4>
+  </div>
+
 
     <ul class="medium-block-grid-4 medium-centered">
       <% @images.each do |post| %>
           <li class="block-image"><%= link_to image_tag(post.post_photo.panel), group_path(post.group) %></li>
       <% end %>
     </ul>
-  </div>
 </div>

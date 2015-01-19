@@ -39,6 +39,10 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [50, 50]
   end
 
+  version :callout do
+    process resize_to_fill: [200, 200, 'Center']
+  end
+
   version :medium do
     process resize_to_fit: [500, 500]
   end

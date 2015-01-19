@@ -25,5 +25,8 @@ class User < ActiveRecord::Base
   def latest_posts(count)
     posts.order(created_at: :desc).limit(count)
   end
+  def self.random(count)
+    order("RANDOM()").limit(count)
+  end
 
 end
