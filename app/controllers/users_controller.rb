@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_groups = @user.groups
     @user_posts = @user.posts
-
   end
 
   private

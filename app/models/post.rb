@@ -14,5 +14,4 @@ class Post < ActiveRecord::Base
     where.not(post_photo: nil).random(4)
   end
 
-
 end

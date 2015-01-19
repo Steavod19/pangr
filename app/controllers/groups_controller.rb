@@ -35,7 +35,6 @@ class GroupsController < ApplicationController
     @post = Post.new
     @member = @group.members.find_or_initialize_by(user: current_user)
     @rand_groups = Group.random(10)
-
   end
 
   def update

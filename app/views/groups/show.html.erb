@@ -73,7 +73,7 @@
             <p class="post_show"><%= post.body %></p>
           </div>
           <div class="medium-12 ">
-          <ul class="button-group inline-list right">
+          <ul class="button-group inline-list right post-option">
             <% if signed_in? %>
               <% if current_user.id == post.user_id %>
                 <li><%= link_to "Edit Post", edit_post_path(post) %></li>
