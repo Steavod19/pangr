@@ -13,6 +13,7 @@ gem 'unicorn'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
+gem 'jquery-colorbox-rails'
 
 group :development, :test do
   gem 'byebug'

@@ -5,9 +5,10 @@
       <div   class="medium-11 columns group-text ">
         <div class="row search search-spacing">
           <%= form_tag groups_path, method: :get %>
+
           <div class="medium-4 col-padding columns">
-            <%= text_field_tag :query, nil, placeholder: "Search"%>
-            <%= submit_tag "Search Groups", class: "button postfix" %>
+            <%= text_field_tag :query, nil, placeholder: "Search", class: ""%>
+            <%= submit_tag "Search Groups", class: "button postfix " %>
           </div>
         </div>
       </div>

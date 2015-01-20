@@ -1,0 +1,72 @@
+<script>
+$(window).scroll(function() {
+  $('#object').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("slideUp");
+    }
+  });
+});
+</script>
+<script>
+$(window).scroll(function() {
+  $('#user-title').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("slideDown");
+    }
+  });
+});
+</script>
+<script>
+$(window).scroll(function() {
+  $('#recent-title').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("pullUp");
+    }
+  });
+});
+</script>
+<script>
+$(window).scroll(function() {
+  $('#random-image').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("pullDown");
+    }
+  });
+});
+</script>
+<script>
+$(window).scroll(function() {
+  $('#group-title').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("slideDown");
+    }
+  });
+});
+</script>
+<script>
+$(window).scroll(function() {
+  $('#group-body').each(function(){
+    var imagePos = $(this).offset().top;
+
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow+600) {
+      $(this).addClass("slideUp");
+    }
+  });
+});
+</script>

@@ -1,12 +1,12 @@
-<div class="panel image-panel image-row">
-  <div class="row">
-  <p class="text-center panel-title-white">Recently Added Images</p>
-  </div>
+<div class="panel image-panel image-row ">
+  <p id="recent-title" class="text-center panel-title-white">Recently Added Images</p>
 
-
-    <ul class="medium-block-grid-4 medium-centered">
+  <div  >
+    <ul id="random-image" class="medium-block-grid-4 medium-centered">
       <% @images.each do |post| %>
-          <li class="block-image"><%= link_to image_tag(post.post_photo.panel), group_path(post.group) %></li>
+          <li  class="block-image"><%= link_to image_tag(post.post_photo.panel), group_path(post.group) %></li>
       <% end %>
     </ul>
+  </div>
+
 </div>

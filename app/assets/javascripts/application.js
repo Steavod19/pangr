@@ -13,10 +13,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.colorbox-min
 //= require foundation
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
 $(document).foundation();
 
 
