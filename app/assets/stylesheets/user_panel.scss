@@ -8,3 +8,41 @@
 .block-image h2 {
   padding-top: 30px;
 }
+.user-background {
+  padding: 20px 20px;
+  background-color: white;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  & h4 {
+    color: #060821;
+  }
+}
+.name-color a{
+  color: #060821;
+}
+
+.panel-title-size {
+  color: #060821;
+  font-size: 60px;
+  font-family: 'Muli';
+  font-weight: 300;
+  padding-bottom: 30px;
+}
+
+.panel-title-white {
+  color: white;
+  font-size: 60px;
+  font-family: 'Muli';
+  font-weight: 300;
+  padding-bottom: 30px;
+}
+
+
+.info-background {
+  background-color: #060821;
+  color: white;
+  padding-top: 40px;
+  & h4 {
+    color: white;
+  }
+}

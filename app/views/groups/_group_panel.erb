@@ -1,16 +1,18 @@
-<div class="row group-panel-title">
-  <h4 class="text-center">Recently Added Groups</h4>
-</div>
+<div class="user-background">
+  <div class="row user-background panel-size">
+    <p class="text-center panel-title-size">Recently Added Groups</p>
 
 
 <% @groups.each do |group| %>
 
-<div class="large-4 column group-panel-spacing">
+<div class="large-4 column">
     <ul>
-      <div class="text-center">
-        <h3><%= link_to group.title, group_path(group) %></h3>
+      <div class="text-center group-title">
+        <h2 class=""><%= link_to group.title, group_path(group) %></h2>
         <p><%= group.description %></p>
       </div>
     </ul>
 </div>
 <% end %>
+</div>
+</div>
