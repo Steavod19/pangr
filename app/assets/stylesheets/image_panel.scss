@@ -5,6 +5,9 @@
   max-height: auto;
   overflow: hidden;
   padding-bottom: 90px;
+  & img {
+    border-radius: 5px;
+  }
 
 }
 .image-panel p {

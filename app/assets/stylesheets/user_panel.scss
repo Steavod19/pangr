@@ -16,7 +16,11 @@
   & h4 {
     color: #060821;
   }
+  & img {
+    border-radius: 5px;
+  }
 }
+
 .name-color a{
   color: #060821;
 }
@@ -45,4 +49,14 @@
   & h4 {
     color: white;
   }
+}
+
+.text-block-formating p {
+  background-color: #060821;
+  border-radius: 5px;
+  padding: 20px;
+  color: white;
+  height: auto;
+  max-width: 300px;
+  margin-right: 20px;
 }
