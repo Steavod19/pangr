@@ -12,7 +12,7 @@
     <p><%= @user.sname %>'s recent posts</p>
   </div>
   <div class="medium-9 columns radius post-panel-position">
-  <% @user_posts.each do |post| %>
+  <% @user.latest_posts(10).each do |post| %>
   <div class="panel radius row user_name">
     <p class="post_show"><%= link_to post.group.title, group_path(post.group) %> Group</p>
     <img class="post-image"><%= image_tag(post.post_photo.postsize) %>
