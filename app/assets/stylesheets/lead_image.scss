@@ -21,7 +21,7 @@
 
 }
 
-.blue-panel {
+.small-panel {
   background-image: image-url("pangr_banner.jpg");
   height: 100%;
   overflow: hidden;
@@ -65,16 +65,12 @@
   text-shadow: 0 0 3px black, 0 0 5px black;
 }
 
-
-
-
 #landing-content {
   background-position: center;
   overflow: hidden;
-  background-image: url("pangr_banner.jpg");
+  background-image: url("https://s3.amazonaws.com/pangr-images/pangr_banner.jpg");
   width: 100%;
   background-size: cover;
-  background-repeat: no-repeat;
   max-height: 500px;
   height: 500px;
 }
