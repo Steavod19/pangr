@@ -1,4 +1,12 @@
 <script>
+$('#landing-content').mousemove(function(e){
+  var amountMovedX = (e.pageX * -1 / 15);
+  var amountMovedY = (e.pageY * -1 / 15);
+  $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+});
+</script>
+
+<script>
 $(window).scroll(function() {
   $('#object').each(function(){
     var imagePos = $(this).offset().top;
@@ -29,7 +37,7 @@ $(window).scroll(function() {
 
     var topOfWindow = $(window).scrollTop();
     if (imagePos < topOfWindow+600) {
-      $(this).addClass("pullUp");
+      $(this).addClass("slideDown");
     }
   });
 });
@@ -41,7 +49,7 @@ $(window).scroll(function() {
 
     var topOfWindow = $(window).scrollTop();
     if (imagePos < topOfWindow+600) {
-      $(this).addClass("pullDown");
+      $(this).addClass("slideUp");
     }
   });
 });

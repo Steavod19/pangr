@@ -2,12 +2,10 @@
 .search {
   input, input[type="text"] {
     padding: 0.5rem 1em;
-
   }
 }
 .search-spacing {
   padding: 75px 0;
-
 }
 .search-padding {
   margin: 0;
@@ -16,10 +14,13 @@
   padding-bottom: 20px;
 }
 .col-padding {
-  padding-top: 30px;
+  padding-top: 10px;
 
 }
 .search-color {
   background-color: #20244E;
-
+  min-height: 70px;
+  position: relative;
+  z-index: 1;
+  top: -50px;
 }
