@@ -42,7 +42,6 @@ feature "User Submits a new post", %q(
       click_on "Join Group"
       fill_in "post_body", with: ""
       click_on "Post"
-      save_and_open_page
       expect(page).to have_content("Body can't be blank")
     end
   end

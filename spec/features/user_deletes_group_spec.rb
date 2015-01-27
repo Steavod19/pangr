@@ -12,16 +12,11 @@
     ) do
 
 
-    context "authenticated user" do
-
-      let(:user){ FactoryGirl.create(:user) }
-      before(:each) do
-        sign_in_as(user)
-      end
-
     scenario "user successfully deletes a group" do
 
       group = FactoryGirl.create :group
+
+      sign_in_as(group.owner)
 
       visit group_path(group)
       click_on "Join Group"
@@ -30,5 +25,4 @@
 
       expect(page).to have_content("You've successfully deleted a group!")
     end
-  end
 end

@@ -16,12 +16,14 @@ feature "User edits a  post", %q(
 
   context "authenticated user" do
     before(:each) do
-      sign_in_as(group.user)
+      sign_in_as(group.owner)
     end
 
     scenario "user successfully edits a post" do
 
       visit group_path(group)
+
+      click_on "Join Group"
 
       fill_in "Post:", with: "This is my comment on the subject"
       click_button "Post"
@@ -39,9 +41,11 @@ feature "User edits a  post", %q(
     scenario "user unsuccessfully edits a post" do
 
       visit group_path(group)
+      click_on "Join Group"
+
       fill_in "Post:", with: ""
       click_button "Post"
-      expect(page).to have_content("Body cannot be blank")
+      expect(page).to have_content("Body can't be blank")
     end
   end
 end

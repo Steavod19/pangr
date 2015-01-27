@@ -31,7 +31,8 @@ require "rails_helper"
 
       click_button "Create Group"
 
-      click_link "Edit"
+      click_on "Options"
+      click_on "Edit Group"
       fill_in "Title", with: "Local Talk"
       fill_in "Description", with: "discussion local stores"
       click_button "Update Group"
@@ -51,7 +52,9 @@ require "rails_helper"
 
       click_button "Create Group"
       expect(page).to have_content("You've successfully created a group!")
-      click_link "Edit"
+      click_on "Join Group"
+      click_on "Options"
+      click_on "Edit Group"
       fill_in "Title", with: ""
       fill_in "Description", with: "discussion local stores"
       click_button "Update Group"
