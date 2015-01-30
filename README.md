@@ -4,10 +4,10 @@
 
 ## Thanks for checking out Pangr!
 
-<p> Build with RoR and Psql </p>
-<p> Uses foundation front-end with mobile ready and responsive design </p>
-<p> Carrierwave Gem for Image uploading Including GIFs! </p>
-<p> Amazon S3 back-end for storage </p> 
+:one: Build with RoR and Psql
+:two: Uses foundation front-end with mobile ready and responsive design
+:three: Carrierwave Gem for Image uploading Including GIFs!
+:four: Amazon S3 back-end for storage 
 
 <br></br>
 <p>THANKS!! let me know if you have any issues</p>
