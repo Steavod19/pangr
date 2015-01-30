@@ -1,9 +1,7 @@
-<h1>Pangr<h1>
+<h1>Pangr<h1> 
 
+![Pagr logo](https://s3.amazonaws.com/pangr-images/pangr200OP.png)
 
-![Pagr logo](https://s3.amazonaws.com/pangr-images/pangr500OP.png)
-
-</hr>
 <h2> Thanks for checking out Pangr! </h2>
 
 <p> Build with RoR and Psql </p>
