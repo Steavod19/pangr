@@ -1,9 +1,8 @@
 # [Pangr](https://pangr.herokuapp.com/) 
 
-![Pagr logo](https://s3.amazonaws.com/pangr-images/pangr200OP.png)
+![Image of homepage ](https://s3.amazonaws.com/pangr-images/Pangr-RM-SS.png)
 
 ### Thanks for checking out Pangr!
-![Image of homepage ](https://s3.amazonaws.com/pangr-images/Pangr-RM-SS.png)
 
 <p> :one: Build with RoR and Psql </p>
 <p> :two: Uses foundation front-end with mobile ready and responsive design </p>
