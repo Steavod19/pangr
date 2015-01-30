@@ -1,8 +1,8 @@
-<h1>Pangr<h1> 
+# [Pangr](https://pangr.herokuapp.com/) 
 
 ![Pagr logo](https://s3.amazonaws.com/pangr-images/pangr200OP.png)
 
-<h2> Thanks for checking out Pangr! </h2>
+## Thanks for checking out Pangr!
 
 <p> Build with RoR and Psql </p>
 <p> Uses foundation front-end with mobile ready and responsive design </p>
